@@ -1,0 +1,7 @@
+#!/bin/sh
+# authenticate with Keystone (OpenStack identity), get JSON containing an
+# authentication token and a service catalog 
+AUTH_JSON="{\"auth\":{\"passwordCredentials\":{\"username\":\"${OS_USERNAME?}\",\"password\":\"${OS_PASSWORD?}\"},\"tenantName\":\"${OS_TENANT_NAME?}\"}}"
+curl -s \
+    -d "$AUTH_JSON" -H "Content-type: application/json" \
+    ${OS_AUTH_URL?}/tokens 
