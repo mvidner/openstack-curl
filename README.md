@@ -46,5 +46,3 @@ Requirements:
 
 * cURL
 * Python 2 or Python 3
-
-FIXME ks-parse does not escape malicious input yet.
